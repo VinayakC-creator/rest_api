@@ -35,19 +35,15 @@ def student_id(id):
 
     return jsonify(student)
 
-
 @todo.route('/students-api')
-def student-api():
-import requests
+def student_api():
+    import requests
 
-url = "https://rest-api-1-03f4.onrender.com/students-list"
+    url = "https://rest-api-1-03f4.onrender.com/students-list"
 
-payload = {}
-headers = {}
+    response = requests.request(method="GET", url=url)
 
-response = requests.request("GET", url, headers=headers, data=payload)
-
-print(response.text)
+    return response.json()
 
 
 
